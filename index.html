@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUSWAY | Aceleração de Clínicas de Estética</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5271ff',   /* Azul Neon Principal */
+                        secondary: '#d9d9d9', /* Cinza Claro */
+                        accent: '#d4af13',    /* Dourado */
+                        dark: '#000000',      /* Fundo Preto */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #000000;
+            color: #d9d9d9;
+            overflow-x: hidden;
+        }
+        
+        /* Fundo Gradeado Tecnológico */
+        .tech-grid {
+            background-image: 
+                linear-gradient(to right, rgba(82, 113, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(82, 113, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Efeito de Vidro (Glassmorphism) */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(82, 113, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .glass-card:hover {
+            border-color: rgba(82, 113, 255, 0.4);
+            box-shadow: 0 0 30px rgba(82, 113, 255, 0.1);
+            transform: translateY(-4px);
+        }
+
+        /* Brilhos (Glow) */
+        .glow-primary {
+            box-shadow: 0 0 15px rgba(82, 113, 255, 0.3);
+        }
+
+        .glow-text-primary {
+            text-shadow: 0 0 10px rgba(82, 113, 255, 0.5);
+        }
+
+        /* Animação Flutuante */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .bg-radial-primary {
+            background: radial-gradient(circle at center, rgba(82, 113, 255, 0.15) 0%, transparent 70%);
+        }
+
+        .mobile-menu-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="tech-grid">
+
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] bg-primary/10 blur-[150px] rounded-full"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[800px] h-[800px] bg-accent/5 blur-[150px] rounded-full"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-radial-primary opacity-30"></div>
+    </div>
+
+    <header class="fixed top-0 left-0 right-0 z-[60] px-4 py-6 md:px-10 md:py-8">
+        <div class="max-w-[1440px] mx-auto flex items-center justify-between bg-black rounded-[35px] px-8 md:px-12 py-5 border border-white/5 shadow-2xl">
+            <div class="flex items-center gap-5 group cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl flex items-center justify-center border border-primary/30 bg-black overflow-hidden group-hover:scale-110 transition-transform">
+    <img 
+        src="/nexusway_site__/LOGO AGÊNCIA (1).png" 
+        alt="Logo Nexusway"
+        class="w-full h-full object-contain"
+    />
+</div>
+
+                <div class="flex flex-col justify-center">
+                    <span class="text-2xl md:text-[28px] font-normal tracking-tight text-white leading-none">Nexusway</span>
+                    <span class="text-[8px] md:text-[9px] text-primary font-bold uppercase tracking-[0.35em] leading-none mt-2">AGÊNCIA DIGITAL.</span>
+                </div>
+            </div>
+
+            <nav class="hidden lg:flex items-center gap-14 text-[10px] font-black uppercase tracking-[0.4em] text-secondary/50">
+                <a href="#metodo-mvc" class="hover:text-white transition-all">Método</a>
+                <a href="#porque-nos" class="hover:text-white transition-all">Por que nós?</a>
+                <a href="#servicos" class="hover:text-white transition-all">Serviços</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/5519989609605?text=Ol%C3%A1!%20Acessei%20o%20site%20da%20Nexusway%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20acelera%C3%A7%C3%A3o%20de%20cl%C3%ADnicas.%20Quero%20aumentar%20meu%20faturamento."
+                   target="_blank"
+                   class="hidden sm:block bg-primary text-white px-10 py-4 rounded-[18px] text-[10px] font-black transition-all hover:bg-white hover:text-black uppercase tracking-[0.2em] shadow-lg shadow-primary/20 text-center">
+                    ACELERAR AGORA
+                </a>
+                <button onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 bg-white/5 rounded-xl">
+                    <span class="w-5 h-0.5 bg-white"></span>
+                    <span class="w-5 h-0.5 bg-white"></span>
+                    <span class="w-5 h-0.5 bg-white"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobileMenu" class="fixed inset-0 z-[55] bg-black/98 backdrop-blur-2xl transition-all duration-500 opacity-0 pointer-events-none lg:hidden">
+        <div class="h-full flex flex-col items-center justify-center gap-12">
+            <a href="#metodo-mvc" onclick="toggleMobileMenu()" class="text-3xl font-light text-white uppercase tracking-[0.3em] hover:text-primary transition-colors">Método</a>
+            <a href="#porque-nos" onclick="toggleMobileMenu()" class="text-3xl font-light text-white uppercase tracking-[0.3em] hover:text-primary transition-colors">Por que nós?</a>
+            <a href="#servicos" onclick="toggleMobileMenu()" class="text-3xl font-light text-white uppercase tracking-[0.3em] hover:text-primary transition-colors">Serviços</a>
+            <a href="https://wa.me/5519989609605?text=Ol%C3%A1!%20Acessei%20o%20site%20da%20Nexusway%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20acelera%C3%A7%C3%A3o%20de%20cl%C3%ADnicas.%20Quero%20aumentar%20meu%20faturamento."
+               target="_blank"
+               class="bg-primary text-white px-12 py-5 rounded-2xl text-xs font-black uppercase tracking-[0.3em] mt-10">
+               ACELERAR AGORA
+            </a>
+        </div>
+    </div>
+
+    <main class="relative z-10">
+        
+        <section class="relative pt-44 pb-32 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20">
+            <div class="flex-1 text-center lg:text-left">
+                <div class="inline-block px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-8 animate-float">
+                    ESPECIALISTAS EM ESCALAR CLÍNICAS DE ESTÉTICA
+                </div>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] mb-8 text-white tracking-tighter uppercase">
+                    Visibilidade sem direcionamento <br />
+                    <span class="text-primary glow-text-primary italic">não gera agenda.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-secondary/80 font-light mb-10 max-w-2xl leading-relaxed">
+                    Transformamos seguidores em pacientes reais. Aplique o método Nexusway e tenha acesso a estratégias de tração e autoridade validadas no campo de batalha.
+                </p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-8 items-center opacity-60">
+                    <div class="flex flex-col">
+                        <span class="font-mono text-white text-xl font-bold">NEXUS</span>
+                        <span class="text-[10px] uppercase tracking-wider">Metodologia</span>
+                    </div>
+                    <div class="w-[1px] h-8 bg-white/10 hidden md:block"></div>
+                    <div class="flex flex-col">
+                        <span class="font-mono text-white text-xl font-bold">100%</span>
+                        <span class="text-[10px] uppercase tracking-wider">Performance</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-[520px] relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-primary to-blue-400 opacity-20 blur-2xl"></div>
+                <div class="relative glass-card p-8 md:p-10 rounded-[2.5rem] border border-white/10 shadow-2xl overflow-hidden">
+                    <div class="mb-8">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-xl font-black text-white uppercase tracking-tighter italic">Aplicação Nexusway</h3>
+                            <span class="text-[10px] font-mono text-primary animate-pulse">PROTOCOLO // NWY-01</span>
+                        </div>
+                        <div class="w-full h-[2px] bg-white/5 relative">
+                            <div class="absolute top-0 left-0 h-full w-1/3 bg-primary glow-primary"></div>
+                        </div>
+                    </div>
+                    <form 
+  action="https://formspree.io/f/mrebnzjr"
+  method="POST"
+  class="space-y-5"
+>
+    <div class="space-y-4">
+        <input 
+            type="text"
+            name="nome_responsavel"
+            placeholder="Nome do Gestor/Dono"
+            required
+            class="w-full bg-black/40 border border-white/10 rounded-xl py-4 px-5 text-sm focus:outline-none focus:border-primary transition-all text-white placeholder:text-secondary/20"
+        >
+
+        <input 
+            type="text"
+            name="nome_clinica"
+            placeholder="Nome da Clínica"
+            required
+            class="w-full bg-black/40 border border-white/10 rounded-xl py-4 px-5 text-sm focus:outline-none focus:border-primary transition-all text-white placeholder:text-secondary/20"
+        >
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input 
+            type="tel"
+            name="whatsapp"
+            placeholder="WhatsApp"
+            required
+            class="w-full bg-black/40 border border-white/10 rounded-xl py-4 px-5 text-sm focus:outline-none focus:border-primary transition-all text-white placeholder:text-secondary/20"
+        >
+
+        <select 
+            name="faturamento"
+            required
+            class="w-full bg-black border border-white/10 rounded-xl py-4 px-5 text-sm focus:outline-none focus:border-primary transition-all text-secondary/60"
+        >
+            <option value="" disabled selected>Faturamento Atual</option>
+            <option>Até R$ 30k</option>
+            <option>R$ 30k - R$ 100k</option>
+            <option>Acima de R$ 100k</option>
+        </select>
+    </div>
+
+    <input type="hidden" name="_captcha" value="false">
+
+    <button 
+        type="submit"
+        class="group relative w-full overflow-hidden bg-primary text-white font-black py-5 rounded-2xl transition-all shadow-[0_0_40px_rgba(82,113,255,0.3)] uppercase text-[11px] tracking-[0.3em]"
+    >
+        <span class="relative z-10">Enviar Aplicação</span>
+    </button>
+
+    <p class="text-[8px] text-center text-secondary/20 uppercase tracking-[0.3em]">
+        Criptografia Nexusway Ativa
+    </p>
+</form>
+
+                          
+                        </div>
+                    </div>
+        </section>
+
+        <section id="metodo-mvc" class="py-32 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center scroll-mt-32">
+            <div class="flex-1 w-full max-w-[500px]">
+                <div class="relative glass-card p-2 rounded-[2.5rem] border border-primary/20 animate-float">
+                    <div class="bg-dark/80 backdrop-blur-3xl rounded-[2.2rem] p-12 aspect-square flex flex-col items-center justify-center gap-12 border border-white/5 shadow-inner relative overflow-hidden">
+                        <div class="absolute inset-0 opacity-10">
+                            <div class="absolute top-1/2 left-0 w-full h-[1px] bg-primary"></div>
+                            <div class="absolute top-0 left-1/2 w-[1px] h-full bg-primary"></div>
+                        </div>
+                        <div class="flex flex-col items-center gap-4 group z-10">
+                            <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#5271ff] to-[#1e3a8a] flex items-center justify-center font-black text-white text-4xl shadow-2xl border border-white/20">M</div>
+                            <span class="text-[10px] uppercase font-bold tracking-[0.3em] text-primary">Magnetismo</span>
+                        </div>
+                        <div class="flex gap-16 z-10">
+                            <div class="flex flex-col items-center gap-4 group">
+                                <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#ffffff] to-[#94a3b8] text-dark flex items-center justify-center font-black text-4xl shadow-2xl border border-white/40">V</div>
+                                <span class="text-[10px] uppercase font-bold tracking-[0.3em] text-white">Valorização</span>
+                            </div>
+                            <div class="flex flex-col items-center gap-4 group">
+                                <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#fde047] to-[#854d0e] flex items-center justify-center font-black text-dark text-4xl shadow-2xl border border-white/20">C</div>
+                                <span class="text-[10px] uppercase font-bold tracking-[0.3em] text-accent">Constância</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 space-y-10">
+                <div class="space-y-4">
+                    <span class="text-primary font-mono text-sm font-bold tracking-widest uppercase flex items-center gap-2">
+                        <span class="w-8 h-[1px] bg-primary"></span>
+                        Estratégia Nexusway
+                    </span>
+                    <h2 class="text-4xl md:text-6xl font-black text-white leading-tight tracking-tighter uppercase">MÉTODO <br><span class="text-primary italic">MVC</span></h2>
+                    <p class="text-secondary/60 text-lg font-light leading-relaxed">O tripé fundamental que a Nexusway utiliza para transformar clínicas comuns em operações de alto lucro.</p>
+                </div>
+                <div class="grid gap-6">
+                    <div class="group flex items-start gap-6 p-6 rounded-2xl border border-white/5 hover:border-primary/30 hover:bg-primary/5 transition-all">
+                        <span class="w-12 h-12 rounded-xl flex items-center justify-center font-black text-xl flex-shrink-0 bg-primary text-white">M</span>
+                        <div><h4 class="text-xl font-bold text-white mb-1 group-hover:text-primary transition-colors">Magnetismo</h4><p class="text-secondary/50 text-sm leading-relaxed font-light">Atração de leads qualificados através de narrativas magnéticas e autoridade digital.</p></div>
+                    </div>
+                    <div class="group flex items-start gap-6 p-6 rounded-2xl border border-white/5 hover:border-primary/30 hover:bg-primary/5 transition-all">
+                        <span class="w-12 h-12 rounded-xl flex items-center justify-center font-black text-xl flex-shrink-0 bg-white text-black">V</span>
+                        <div><h4 class="text-xl font-bold text-white mb-1 group-hover:text-primary transition-colors">Valorização</h4><p class="text-secondary/50 text-sm leading-relaxed font-light">Processos de venda que elevam a percepção de valor dos seus procedimentos.</p></div>
+                    </div>
+                    <div class="group flex items-start gap-6 p-6 rounded-2xl border border-white/5 hover:border-primary/30 hover:bg-primary/5 transition-all">
+                        <span class="w-12 h-12 rounded-xl flex items-center justify-center font-black text-xl flex-shrink-0 bg-accent text-white">C</span>
+                        <div><h4 class="text-xl font-bold text-white mb-1 group-hover:text-primary transition-colors">Constância</h4><p class="text-secondary/50 text-sm leading-relaxed font-light">Repetição estratégica que garante faturamento previsível todos os meses.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="porque-nos" class="py-32 px-6 max-w-7xl mx-auto scroll-mt-32">
+            <div class="flex flex-col lg:flex-row gap-24">
+                <div class="flex-1">
+                    <div class="inline-block px-4 py-1.5 rounded-full border border-accent/30 bg-accent/5 text-accent text-[10px] font-bold uppercase tracking-[0.2em] mb-8">Exclusividade Nexusway</div>
+                    <h2 class="text-4xl md:text-6xl font-black mb-12 text-white leading-[0.9] tracking-tighter uppercase">POR QUE <br><span class="text-primary italic underline decoration-white/10 underline-offset-[12px]">NEXUSWAY.</span></h2>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+                        <div class="glass-card p-8 rounded-2xl flex flex-col items-center justify-center text-center"><span class="text-3xl font-black text-primary mb-3 glow-text-primary font-mono">PROCESSOS</span><span class="text-[10px] text-secondary/40 font-black uppercase">VALIDADOS</span></div>
+                        <div class="glass-card p-8 rounded-2xl flex flex-col items-center justify-center text-center"><span class="text-3xl font-black text-primary mb-3 glow-text-primary font-mono">100%</span><span class="text-[10px] text-secondary/40 font-black uppercase">FOCO EM LUCRO</span></div>
+                        <div class="glass-card p-8 rounded-2xl flex flex-col items-center justify-center text-center"><span class="text-3xl font-black text-primary mb-3 glow-text-primary font-mono">ELITE</span><span class="text-[10px] text-secondary/40 font-black uppercase">ESTRATEGIA</span></div>
+                    </div>
+                    
+                    <div class="relative overflow-hidden rounded-[2.5rem] border border-white/10 aspect-video group">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1200" alt="Tech" class="w-full h-full object-cover grayscale opacity-30 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-1000">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent flex flex-col justify-end p-12">
+                            <div class="w-12 h-1 bg-primary mb-6 shadow-[0_0_15px_rgba(82,113,255,0.8)]"></div>
+                            <h3 class="text-4xl font-black text-white uppercase tracking-tighter leading-tight">INTELIGÊNCIA <br><span class="text-primary italic glow-text-primary">DE DADOS</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1 flex flex-col gap-8 justify-center">
+                    <div class="group p-8 rounded-[2rem] border border-white/5 hover:bg-white/5 transition-all relative overflow-hidden">
+                        <span class="absolute top-4 right-8 text-8xl font-black text-white/5 group-hover:text-primary/10">01</span>
+                        <div class="relative z-10"><h4 class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors uppercase italic">Previsibilidade Total</h4><p class="text-secondary/50 text-sm leading-relaxed font-light">Criamos um sistema onde você sabe exatamente quantos pacientes entrarão no próximo mês.</p></div>
+                    </div>
+                    <div class="group p-8 rounded-[2rem] border border-white/5 hover:bg-white/5 transition-all relative overflow-hidden">
+                        <span class="absolute top-4 right-8 text-8xl font-black text-white/5 group-hover:text-primary/10">02</span>
+                        <div class="relative z-10"><h4 class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors uppercase italic">Posicionamento Elite</h4><p class="text-secondary/50 text-sm leading-relaxed font-light">Sua clínica deixa de brigar por preço para atrair quem valoriza a experiência e o resultado.</p></div>
+                    </div>
+                    <div class="group p-8 rounded-[2rem] border border-white/5 hover:bg-white/5 transition-all relative overflow-hidden">
+                        <span class="absolute top-4 right-8 text-8xl font-black text-white/5 group-hover:text-primary/10">03</span>
+                        <div class="relative z-10"><h4 class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors uppercase italic">Suporte Consultivo</h4><p class="text-secondary/50 text-sm leading-relaxed font-light">Não somos apenas uma agência, somos seu braço estratégico de crescimento.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos" class="py-32 px-6 max-w-7xl mx-auto scroll-mt-32">
+            <div class="text-center mb-24">
+                <h2 class="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter uppercase">NOSSO <span class="text-primary italic underline decoration-white/10 underline-offset-8">ARSENAL</span></h2>
+                <p class="text-secondary/50 max-w-2xl mx-auto uppercase tracking-[0.3em] text-[10px] font-bold">Estratégias exclusivas para dominação do mercado de estética pela Nexusway</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group glass-card p-10 rounded-[2rem] flex flex-col h-full border border-white/5 hover:border-primary/40 relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                        <i class="ph ph-google-logo text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-black mt-8 mb-4 text-white group-hover:text-primary transition-colors tracking-tight italic uppercase">Google Meu Negócio Profissional</h4>
+                    <ul class="text-secondary/60 text-xs leading-relaxed mb-8 flex-grow font-light list-disc pl-4 space-y-1">
+                        <li>Otimização completa do perfil</li>
+                        <li>Estratégias para posicionamento local</li>
+                        <li>Reputação e autoridade</li>
+                        <li>Sem promessas irreais</li>
+                    </ul>
+                    <div class="text-[10px] font-black uppercase tracking-widest text-primary"></div>
+                </div>
+
+                <div class="group glass-card p-10 rounded-[2rem] flex flex-col h-full border border-white/5 hover:border-primary/40 relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                        <i class="ph ph-chat-circle-text text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-black mt-8 mb-4 text-white group-hover:text-primary transition-colors tracking-tight italic uppercase">Social Media Estratégico</h4>
+                    <ul class="text-secondary/60 text-xs leading-relaxed mb-8 flex-grow font-light list-disc pl-4 space-y-1">
+                        <li>Conteúdo focado em Autoridade, Confiança e Decisão</li>
+                        <li>Estratégias baseadas em comportamento humano</li>
+                        <li>Não é só postar</li>
+                    </ul>
+                    <div class="text-[10px] font-black uppercase tracking-widest text-primary"></div>
+                </div>
+
+                <div class="group glass-card p-10 rounded-[2rem] flex flex-col h-full border border-white/5 hover:border-primary/40 relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                        <i class="ph ph-desktop text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-black mt-8 mb-4 text-white group-hover:text-primary transition-colors tracking-tight italic uppercase">Sites para Clínicas</h4>
+                    <ul class="text-secondary/60 text-xs leading-relaxed mb-8 flex-grow font-light list-disc pl-4 space-y-1">
+                        <li>Sites personalizados e de alta conversão</li>
+                        <li>Pensados para transformar visitantes em pacientes</li>
+                        <li>Funciona como um consultório digital 24h</li>
+                    </ul>
+                    <div class="text-[10px] font-black uppercase tracking-widest text-primary"></div>
+                </div>
+
+                <div class="group glass-card p-10 rounded-[2rem] flex flex-col h-full border border-white/5 hover:border-primary/40 relative overflow-hidden lg:col-span-1 lg:ml-auto w-full">
+                    <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                        <i class="ph ph-lightning text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-black mt-8 mb-4 text-white group-hover:text-primary transition-colors tracking-tight italic uppercase">Tráfego Pago Inteligente</h4>
+                    <ul class="text-secondary/60 text-xs leading-relaxed mb-8 flex-grow font-light list-disc pl-4 space-y-1">
+                        <li>Estratégias completas e funis pensados para estética</li>
+                        <li>Criação dos criativos</li>
+                        <li>Nada genérico</li>
+                    </ul>
+                    <div class="text-[10px] font-black uppercase tracking-widest text-primary"></div>
+                </div>
+
+                <div class="group glass-card p-10 rounded-[2rem] flex flex-col h-full border border-white/5 hover:border-primary/40 relative overflow-hidden lg:col-span-2 w-full">
+                    <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                        <i class="ph ph-trend-up text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-black mt-8 mb-4 text-white group-hover:text-primary transition-colors tracking-tight italic uppercase">Planos de Crescimento a Cada 2 Meses</h4>
+                    <ul class="text-secondary/60 text-xs leading-relaxed mb-8 flex-grow font-light list-disc pl-4 space-y-1">
+                        <li>Estratégias novas e ideias práticas</li>
+                        <li>Planos personalizados para escalar a clínica</li>
+                        <li>Mentalidade de sócio do negócio</li>
+                    </ul>
+                    <div class="text-[10px] font-black uppercase tracking-widest text-primary"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-24 border-t border-white/5 bg-dark relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-16">
+            <div class="md:col-span-2 space-y-8">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center border border-primary/30">
+                    
+                    </div>
+                </div>
+                <p class="text-secondary/40 text-sm max-w-sm font-light">Nossa missão é acelerar o faturamento de clínicas de estética através de processos digitais proprietários.</p>
+            </div>
+            <div>
+                <h5 class="text-white font-bold text-xs uppercase tracking-[0.3em] border-b border-white/10 pb-2 mb-6">Navegação</h5>
+                <ul class="space-y-3 text-secondary/40 text-[13px]">
+                    <li><a href="#metodo-mvc" class="hover:text-primary transition-colors">Método</a></li>
+                    <li><a href="#porque-nos" class="hover:text-primary transition-colors">Por que nós?</a></li>
+                    <li><a href="#servicos" class="hover:text-primary transition-colors">Serviços</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="flex gap-4 justify-center mt-6">
+  
+  <a 
+    href="https://www.instagram.com/nexusway_" 
+    target="_blank"
+    class="w-14 h-14 rounded-2xl bg-black border border-white/10 flex items-center justify-center hover:scale-110 transition-all"
+    aria-label="Instagram Nexusway"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5z"/>
+      <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"/>
+      <circle cx="17.5" cy="6.5" r="1"/>
+    </svg>
+  </a>
+
+</div>
+
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-24 pt-12 border-t border-white/5 text-center">
+            <p class="text-secondary/20 text-[9px] uppercase tracking-[0.5em] font-mono">© 2024 NEXUSWAY // EXCELÊNCIA EM ACELERAÇÃO DIGITAL</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5519989609605?text=Ol%C3%A1!%20Acessei%20o%20site%20da%20Nexusway%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20acelera%C3%A7%C3%A3o%20de%20cl%C3%ADnicas.%20Quero%20aumentar%20meu%20faturamento." 
+       target="_blank" 
+       class="fixed bottom-10 right-10 z-[100] group">
+        <div class="absolute inset-0 bg-green-500/40 blur-2xl rounded-full animate-pulse group-hover:scale-150 transition-transform duration-700"></div>
+        <div class="relative w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center shadow-xl border border-white/20 transition-all group-hover:-translate-y-2 group-hover:rotate-6">
+            <svg viewBox="0 0 24 24" class="w-8 h-8 fill-white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+    </a>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const isOpen = menu.classList.contains('opacity-100');
+            if (isOpen) {
+                menu.classList.remove('opacity-100', 'pointer-events-auto');
+                menu.classList.add('opacity-0', 'pointer-events-none');
+                document.body.classList.remove('mobile-menu-open');
+            } else {
+                menu.classList.add('opacity-100', 'pointer-events-auto');
+                menu.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.classList.add('mobile-menu-open');
+            }
+        }
+    </script>
+</body>
+</html>
