@@ -8,17 +8,17 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 py-6">
       <div className="flex items-center justify-between w-full max-w-7xl bg-black/20 backdrop-blur-xl border border-white/10 px-6 py-3 rounded-3xl md:rounded-full">
-        {/* Logo Personalizada e Responsiva */}
+        {/* Logo Personalizada - TAMANHO CORRIGIDO (Ampliado) */}
         <a
           href="/"
-          className="flex items-center cursor-pointer transition-transform hover:scale-105 duration-300"
+          className="flex items-center cursor-pointer transition-transform duration-300"
         >
           <img
             src="/logo.png"
             alt="NexusWay"
-            // Aqui está a magia do tamanho responsivo:
-            // h-8 para mobile, md:h-10 para tablets, lg:h-12 para computadores
-            className="h-8 md:h-10 lg:h-12 w-auto object-contain"
+            // Tamanho bastante aumentado (h-16 a h-20) e com um zoom artificial (scale-125)
+            // O origin-left garante que ela não "esmaga" os outros itens ao crescer
+            className="h-16 md:h-20 lg:h-24 w-auto object-contain scale-110 md:scale-125 origin-left"
           />
         </a>
 
