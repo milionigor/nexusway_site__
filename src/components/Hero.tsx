@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 export default function Hero() {
   // 💡 Substitua abaixo pelo número de WhatsApp real da agência (com código do país e DDD)
   const WHATSAPP_LINK =
-    "https://wa.me/551998609605?text=ol%C3%A1%20vim%20pelo%20site%20da%20nexusway%20quero%20alavancar%20meu%20negocio%20online";
+    "https://wa.me/5519989609605?text=Ol%C3%A1%2C%20equipe%20NexusWay!%20Acessei%20o%20site%20e%20quero%20aplicar%20as%20estrat%C3%A9gias%20de%20voc%C3%AAs%20para%20atrair%20mais%20clientes%20e%20escalar%20meu%20neg%C3%B3cio%20local.";
 
   return (
     // 💡 ID "inicio" adicionado aqui para o menu funcionar
