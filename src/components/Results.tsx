@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 
 export default function Results() {
   return (
+    // 👇 O ID "resultados" está aqui!
     <section
       id="resultados"
       className="py-32 bg-brand-dark text-center px-4 relative overflow-hidden"
@@ -26,7 +27,7 @@ export default function Results() {
         </p>
 
         <motion.a
-          href="https://wa.me/5511999999999"
+          href="https://wa.me/5519989609605"
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{

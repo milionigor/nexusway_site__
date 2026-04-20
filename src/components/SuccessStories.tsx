@@ -2,9 +2,10 @@ import { motion } from "motion/react";
 
 export default function SuccessStories() {
   return (
+    // 👇 O ID "depoimentos" está aqui!
     <section
       id="depoimentos"
-      className="py-32 bg-brand-dark text-center px-4 relative overflow-hidden"
+      className="py-32 bg-brand-dark text-center px-4 relative overflow-hidden border-t border-white/5"
     >
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full blue-glow opacity-30 pointer-events-none" />
 
@@ -24,7 +25,7 @@ export default function SuccessStories() {
         </p>
 
         <motion.a
-          href="https://wa.me/5511999999999"
+          href="https://wa.me/5519989609605"
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{
