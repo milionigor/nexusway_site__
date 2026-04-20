@@ -12,6 +12,11 @@
 }
 
 @layer base {
+  /* 👇 A regra mágica para o clique do menu deslizar a tela 👇 */
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-brand-dark text-brand-gray font-sans antialiased;
   }
