@@ -2,7 +2,8 @@ import { motion } from "motion/react";
 
 export default function FinalCTA() {
   // 💡 Seu número oficial do WhatsApp já configurado!
-  const WHATSAPP_LINK = "https://wa.me/5519989609605";
+  const WHATSAPP_LINK =
+    "https://wa.me/5519989609605?text=Ol%C3%A1%2C%20equipe%20NexusWay!%20Acessei%20o%20site%20e%20quero%20aplicar%20as%20estrat%C3%A9gias%20de%20voc%C3%AAs%20para%20atrair%20mais%20clientes%20e%20escalar%20meu%20neg%C3%B3cio%20local.";
 
   return (
     // 👇 Adicionado id="contato" para a rolagem do menu parar exatamente aqui!
