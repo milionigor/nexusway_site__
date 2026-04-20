@@ -26,9 +26,18 @@ export default function App() {
         <Brands />
         <About />
         <Services />
-        <Transformation />
-        <VideoTestimonial />
-        <Testimonials />
+
+        {/* 👇 A ÂNCORA DE RESULTADOS ENVOLVENDO A TRANSFORMAÇÃO 👇 */}
+        <div id="resultados">
+          <Transformation />
+        </div>
+
+        {/* 👇 A ÂNCORA DE DEPOIMENTOS ENVOLVENDO OS VÍDEOS E TEXTOS 👇 */}
+        <div id="depoimentos">
+          <VideoTestimonial />
+          <Testimonials />
+        </div>
+
         <Differentials />
         <Attendance />
         <FinalCTA />
@@ -38,4 +47,3 @@ export default function App() {
     </div>
   );
 }
-
