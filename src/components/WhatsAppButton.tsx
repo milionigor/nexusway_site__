@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 
 export default function WhatsAppButton() {
-  const phoneNumber = "5511999999999"; // Placeholder number
+  const phoneNumber = "5519989609605"; // Placeholder number
   const message = encodeURIComponent("Olá! Gostaria de saber mais sobre os serviços da NexusWay.");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 

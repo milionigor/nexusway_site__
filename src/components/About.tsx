@@ -48,18 +48,23 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="relative aspect-square rounded-[40px] overflow-hidden border border-white/10"
         >
-          <img
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000"
-            alt="Team Strategy"
+          {/* 👇 AQUI ESTÁ O SEU VÍDEO NOVO 👇 */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-full object-cover opacity-60"
-            referrerPolicy="no-referrer"
-          />
+          >
+            {/* O arquivo precisa estar na pasta 'public' com esse exato nome! */}
+            <source src="/video-sobre.mp4" type="video/mp4" />
+          </video>
+          {/* 👆 FIM DO VÍDEO 👆 */}
+
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
           <div className="absolute bottom-10 left-10">
-            <div className="text-5xl font-bold text-brand-blue mb-2">100%</div>
-            <div className="text-white/60 uppercase tracking-widest text-xs font-bold">
-              Foco em Resultados
-            </div>
+           
+
           </div>
         </motion.div>
       </div>

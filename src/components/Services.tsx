@@ -33,14 +33,14 @@ const services = [
   {
     title: "Sites & Landing Pages",
     description:
-      "Criamos páginas modernas, rápidas e pensadas para conversão — feitas para transformar visitantes em oportunidades reais.",
+      "Criamos páginas modernas, rápidas e pensadas para conversão,feitas para transformar visitantes em oportunidades reais.",
     icon: Layout,
     benefit: "Conversão em escala",
   },
   {
     title: "Conteúdo & Criativos",
     description:
-      "Design não é só estética — é percepção de valor. Criamos conteúdos que geram autoridade e fazem sua empresa parecer muito maior.",
+      "Design não é só estética, é percepção de valor. Criamos conteúdos que geram autoridade e fazem sua empresa parecer muito maior.",
     icon: PenTool,
     benefit: "Imagem forte e profissional",
   },

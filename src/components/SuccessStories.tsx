@@ -25,7 +25,7 @@ export default function SuccessStories() {
         </p>
 
         <motion.a
-          href="https://wa.me/5519989609605"
+          href="https://wa.me/5519989609605?text=Ol%C3%A1%2C%20equipe%20NexusWay!%20Acessei%20o%20site%20e%20quero%20aplicar%20as%20estrat%C3%A9gias%20de%20voc%C3%AAs%20para%20atrair%20mais%20clientes%20e%20escalar%20meu%20neg%C3%B3cio%20local."
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{

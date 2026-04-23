@@ -20,7 +20,7 @@ export default function Attendance() {
           Atendemos empresas em todo o <span className="text-white font-bold">Brasil</span> e também no <span className="text-white font-bold">mundo</span>.
         </p>
         <p className="text-brand-gray/60 text-lg">
-          Não importa onde você esteja — se você quer crescer, podemos te ajudar.
+          Não importa onde você esteja, se você quer crescer, podemos te ajudar.
         </p>
       </div>
     </section>
