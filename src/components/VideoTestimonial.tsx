@@ -1,42 +1,81 @@
 import { motion } from "motion/react";
-import { Play } from "lucide-react";
 
 export default function VideoTestimonial() {
   return (
-    <section className="py-32 bg-brand-dark px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">Veja o que nossos clientes estão dizendo</h2>
-          <p className="text-brand-gray/60 uppercase tracking-widest text-xs font-bold">Resultados reais de empresas reais</p>
+    <section className="py-20 md:py-32 bg-brand-dark px-4 relative overflow-hidden">
+      {/* Luz de fundo suave e moderna */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full blue-glow opacity-20 pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Cabeçalho */}
+        <div className="text-center mb-16 md:mb-20">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight"
+          >
+            Veja o que nossos clientes estão dizendo
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-brand-gray/60 text-xs md:text-sm font-bold uppercase tracking-[0.3em]"
+          >
+            Resultados Reais de Empresas Reais
+          </motion.p>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="relative aspect-video max-w-5xl mx-auto rounded-[40px] overflow-hidden border border-white/10 group cursor-pointer"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1200"
-            alt="Video Thumbnail"
-            className="w-full h-full object-cover opacity-40 transition-transform duration-700 group-hover:scale-105"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="w-24 h-24 rounded-full bg-brand-blue flex items-center justify-center shadow-[0_0_30px_rgba(82,113,255,0.5)]"
-            >
-              <Play className="w-10 h-10 text-white fill-current ml-1" />
-            </motion.div>
-          </div>
-          <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end">
-            <div className="bg-black/60 backdrop-blur-md p-6 rounded-2xl border border-white/10">
-              <p className="text-white font-bold text-xl">"A NexusWay mudou nosso jogo."</p>
-              <p className="text-white/60 text-sm">Empresa Local de Sucesso</p>
+        {/* Grade: 1 coluna no celular (embaixo do outro), 2 no computador (lado a lado) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 max-w-4xl mx-auto">
+          {/* VÍDEO 1 */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative aspect-[9/16] rounded-[32px] overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)] bg-[#0a0a0a]"
+          >
+            {/* Tag de vídeo real para você colocar o seu */}
+            <video controls playsInline className="w-full h-full object-cover">
+              {/* Lembre-se: O arquivo 'depoimento1.mp4' deve estar na pasta 'public' */}
+              <source src="/depoimento1.mp4" type="video/mp4" />
+              Seu navegador não suporta vídeos.
+            </video>
+
+            {/* Legenda de Vidro flutuante */}
+            <div className="absolute bottom-16 left-4 right-4 bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl p-4 pointer-events-none">
+              <p className="text-white font-bold text-sm md:text-base leading-tight">
+                "O faturamento dobrou no primeiro mês!"
+              </p>
+              <p className="text-brand-blue text-[10px] font-bold uppercase tracking-widest mt-2">
+              </p>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+
+          {/* VÍDEO 2 */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="relative aspect-[9/16] rounded-[32px] overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)] bg-[#0a0a0a]"
+          >
+            <video controls playsInline className="w-full h-full object-cover">
+              {/* Lembre-se: O arquivo 'depoimento2.mp4' deve estar na pasta 'public' */}
+              <source src="/depoimento2.mp4" type="video/mp4" />
+              Seu navegador não suporta vídeos.
+            </video>
+
+            {/* Legenda de Vidro flutuante */}
+            <div className="absolute bottom-16 left-4 right-4 bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl p-4 pointer-events-none">
+              <p className="text-white font-bold text-sm md:text-base leading-tight">
+                "Trabalho rápido, profissional e que traz resultado real."
+              </p>
+              <p className="text-brand-blue text-[10px] font-bold uppercase tracking-widest mt-2">
+              </p>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
