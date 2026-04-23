@@ -46,7 +46,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/nexusway_/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-brand-blue transition-colors flex items-center gap-2"
